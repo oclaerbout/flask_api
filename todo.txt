@@ -1,0 +1,7 @@
+
+
+installeer flask-sqlalchemy
+installeer flask-migrate
+
+maak een config.py file in de root directory
+

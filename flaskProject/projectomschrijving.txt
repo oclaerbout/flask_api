@@ -1,0 +1,40 @@
+
+Doel:
+Ter beschikking stellen van een AI/ML model dat predicties doet inzake de prijs van een woning ifv enkele parameters.
+
+Ter beschikking stellen:
+-Via API:
+Via een python script kan de online server worden bevraagd.  Deze retourneert een schatting van de prijs.
+-Via front-end:
+De gebruiker voert enkele parameters in een formulier in en krijgt een schatting teruggestuurd op het scherm.
+
+Periodiek uitvoeren van een taak en vb wegschrijven van de resultaten (vd api,...) in een postgres db.
+Intrestvoeren van de nat bank
+
+Aanpak:
+Samen brainstormen hoe aan te pakken en dan stapsgewijs uitvoeren.
+
+Stappenplan:
+0. Inlezen van de data
+0.1 Opzetten van een databank om de data in te voeren en later extra data in te geven
+1. Bouwen van het model: regressie via deep learning
+2. Exporteren
+
+3. Ter beschikking stellen:
+3.1 Via api
+3.1.1 Flask met endpoint /predict: input = ...
+      output = prijs in k€?
+      opslaan van de request: user? | timestamp | input params | resultaat
+      validatie van de input data -> message indien niet geldig
+3.1.2 Flask app met input formulier
+      Na invullen formulier: weergave resultaat
+      Overzicht van alle requests met paginering
+      Idem: save in db
+4. Automatische update van data via api
+   Dagelijks check api van NBB om intrestvoet te downloaden
+   Save in db
+   Weergave in grafiek
+5. Deploy
+   In docker container
+   Op AWS
+   Load balancer / autoscaling

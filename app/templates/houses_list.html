@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">longitude</th>
+      <th scope="col">latitude</th>
+      <th scope="col">housing_median_age</th>
+      <th scope="col">total_rooms</th>
+      <th scope="col">total_bedrooms</th>
+      <th scope="col">population</th>
+      <th scope="col">households</th>
+      <th scope="col">median_income</th>
+      <th scope="col">median_house_value</th>
+      <th scope="col">ocean_proximity</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for house in houses %}
+    <tr>
+      <td>{{ house.longitude }}</td>
+      <td>{{ house.latitude }}</td>
+      <td>{{ house.housing_median_age }}</td>
+      <td>{{ house.total_rooms }}</td>
+      <td>{{ house.total_bedrooms }}</td>
+      <td>{{ house.population }}</td>
+      <td>{{ house.households }}</td>
+      <td>{{ house.median_income }}</td>
+      <td>{{ house.median_house_value }}</td>
+      <td>{{ house.ocean_proximity }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a href="{{ url_for('house_insert') }}" class="btn btn-warning" tabindex="-1" role="button" aria-disabled="true">Nog een huis invoeren</a>
+
+{% endblock %}
